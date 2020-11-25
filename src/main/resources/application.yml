@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: config-dev  
+  profiles:
+    active: dev
+  jpa:
+    database: mysql
+    database-platform: mysql
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update               show-sql: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/healthcare
+    username: dev
+    password: root
+    continue-on-error: true
+  security:    user:      name: admin
+      password: admin
+    
+   
+   
+logging:
+  file:
+    name: health_care_vitals_api.log
+    path: C:/health_care_user_api
+  level:
+    org.hibernate.SQL: debug
+    org.hibernate.type: info
+    
